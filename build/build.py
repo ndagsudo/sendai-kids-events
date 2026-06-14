@@ -379,6 +379,7 @@ def build_index(events, sat, sun):
   <meta name="twitter:image" content="{SITE_URL}/ogp.png">
   <link rel="stylesheet" href="style.css">
   <link rel="canonical" href="{SITE_URL}/index.html">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1651709617297400" crossorigin="anonymous"></script>
 </head>
 <body>
 {render_header("index")}
@@ -462,6 +463,7 @@ def build_weekend(events, sat, sun):
   <meta name="twitter:image" content="{SITE_URL}/ogp.png">
   <link rel="stylesheet" href="style.css">
   <link rel="canonical" href="{SITE_URL}/weekend.html">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1651709617297400" crossorigin="anonymous"></script>
 </head>
 <body>
 {render_header("weekend")}
@@ -511,6 +513,7 @@ def build_privacy():
   <meta name="description" content="仙台・宮城の子どもイベントサイトのプライバシーポリシー。個人情報・Cookie・Google アナリティクス・AdSense についての説明をご確認ください。">
   <link rel="stylesheet" href="style.css">
   <link rel="canonical" href="{SITE_URL}/privacy.html">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1651709617297400" crossorigin="anonymous"></script>
 </head>
 <body>
 {render_header("privacy")}
