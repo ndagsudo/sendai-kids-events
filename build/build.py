@@ -374,7 +374,9 @@ def build_index(events, sat, sun):
   <meta property="og:type" content="website">
   <meta property="og:url" content="{SITE_URL}/index.html">
   <meta property="og:site_name" content="{SITE_NAME}">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="{SITE_URL}/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{SITE_URL}/ogp.png">
   <link rel="stylesheet" href="style.css">
   <link rel="canonical" href="{SITE_URL}/index.html">
 </head>
@@ -455,7 +457,9 @@ def build_weekend(events, sat, sun):
   <meta property="og:type" content="website">
   <meta property="og:url" content="{SITE_URL}/weekend.html">
   <meta property="og:site_name" content="{SITE_NAME}">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="{SITE_URL}/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{SITE_URL}/ogp.png">
   <link rel="stylesheet" href="style.css">
   <link rel="canonical" href="{SITE_URL}/weekend.html">
 </head>
