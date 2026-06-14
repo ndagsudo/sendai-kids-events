@@ -81,16 +81,13 @@ class KomorebiForestScraper(BaseEventScraper):
             month = int(m.group(1))
             day   = int(m.group(2))
 
-            # 年を推定（過去なら翌年）
+            # 今年の日付のみ対象（過去はスキップ、来年繰り上げなし）
             try:
                 ev_date = date(this_year, month, day)
             except ValueError:
                 continue
             if ev_date < today:
-                try:
-                    ev_date = date(next_year, month, day)
-                except ValueError:
-                    continue
+                continue
 
             # タイトルを探す
             title = self._find_title(paras, i, p)

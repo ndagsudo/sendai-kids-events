@@ -42,7 +42,8 @@ _KID_PAT = re.compile(
 _ADULT_PAT = re.compile(
     r"(福袋|タイムセール|スタッフ募集|求人|採用|ポイント5倍|"
     r"クーポン配布|パブリックビューイング|健康診断|保険|FIFAワールドカップ|"
-    r"快眠|寝具|ヘルス|ウェルネス|睡眠|美容|コスメ|ファッション)"
+    r"快眠|寝具|ヘルス|ウェルネス|睡眠|美容|コスメ|ファッション|"
+    r"整体|骨盤|マッサージ|整骨|エステ|サロン|セール|価格／)"
 )
 
 
@@ -68,6 +69,9 @@ class AeonMallKamisugiScraper(BaseEventScraper):
         for a in soup.find_all("a", href=True):
             href = a["href"]
             if not re.search(r"/news/detail/\d+", href):
+                continue
+            # shop_news（店舗セール等）は除外、event_news のみ対象
+            if "shop_news" in href:
                 continue
 
             title_p = a.find("p", class_="ttl")
