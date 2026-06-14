@@ -1,0 +1,63 @@
+name: サイト自動ビルド＆デプロイ
+
+on:
+  # data/ や build/ や scraper/ を変更して push したとき自動実行
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "build/**"
+      - "static/**"
+      - "scraper/**"
+      - ".github/workflows/**"
+
+  # 毎日午前6時（JST）に自動実行してイベントを最新化
+  # UTC 21:00 = JST 06:00
+  schedule:
+    - cron: "0 21 * * *"
+
+  # GitHub画面から手動実行も可能
+  workflow_dispatch:
+
+# docs/ と data/ に書き込むために write 権限が必要
+permissions:
+  contents: write
+
+jobs:
+  scrape-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Python 3.11 をセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 依存ライブラリをインストール
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # スクレイパーを実行して data/events.csv を最新化
+      # --no-build オプションでビルドは次のステップで行う
+      - name: イベント情報をスクレイピング
+        run: python scraper/run_scrapers.py --no-build
+
+      # 環境変数 SITE_URL でビルド（GitHubのVariablesに設定してください）
+      - name: サイトをビルド
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://your-username.github.io/sendai-kids-events' }}
+        run: python build/build.py
+
+      # 生成した docs/ と更新された data/events.csv をコミット＆プッシュ
+      - name: 生成ファイルをコミット＆プッシュ
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/ data/events.csv
+          git diff --cached --quiet \
+            || git commit -m "auto: イベント情報を更新 $(date '+%Y-%m-%d') [skip ci]"
+          git push
