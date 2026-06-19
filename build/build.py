@@ -150,7 +150,7 @@ def fmt_period(start_at, end_at):
 # ==============================================================
 
 def render_header(current="index"):
-    """共通ヘッダー HTML。current には "index" / "weekend" / "privacy" を渡す"""
+    """共通ヘッダー HTML。current には "index" / "weekend" / "about" / "privacy" を渡す"""
     def cls(page):
         return ' class="active"' if current == page else ""
 
@@ -160,6 +160,7 @@ def render_header(current="index"):
       <nav>
         <a href="index.html"{cls("index")}>すべてのイベント</a>
         <a href="weekend.html"{cls("weekend")}>今週末</a>
+        <a href="about.html"{cls("about")}>このサイトについて</a>
         <a href="privacy.html"{cls("privacy")}>プライバシーポリシー</a>
       </nav>
     </div>
@@ -173,6 +174,7 @@ def render_footer():
     <div class="footer-links">
       <a href="index.html">イベント一覧</a>
       <a href="weekend.html">今週末のイベント</a>
+      <a href="about.html">このサイトについて</a>
       <a href="privacy.html">プライバシーポリシー</a>
     </div>
     <p>{SITE_NAME} &copy; {year}</p>
@@ -390,6 +392,22 @@ def build_index(events, sat, sun):
         <h1>仙台・宮城の子どもイベント</h1>
         <p>仙台市・宮城県周辺の親子・小学生向けイベントを掲載しています。<br>
            今週末（{weekend_label}）のおでかけにぜひ活用してください。</p>
+        <p>科学体験・工作・自然観察・スポーツ・ワークショップなど、<br>
+           子どもが楽しめるイベントを毎朝自動更新でお届けします。<br>
+           無料イベントも多数掲載中！お気に入りを見つけてください。</p>
+      </div>
+
+      <!-- 掲載施設紹介 -->
+      <div class="about-sites">
+        <h2>掲載中の施設・会場</h2>
+        <ul class="venue-list">
+          <li><strong>仙台市科学館</strong>（青葉区） — 科学実験・ものづくり体験など、親子で楽しめるイベントを定期開催。</li>
+          <li><strong>イオンモール仙台上杉</strong>（青葉区） — 大型ショッピングモール内で開催されるキッズワークショップや体験イベント。</li>
+          <li><strong>宮城県こもれびの森 森林科学館</strong>（川崎町） — 豊かな自然の中で竹工作・苔玉作りなど季節の体験教室を実施。</li>
+          <li><strong>仙台市縄文の森広場</strong>（太白区） — 縄文時代の暮らしを体験できる施設。土器・石器体験など子ども向け企画が充実。</li>
+          <li><strong>JRフルーツパーク仙台あらはま</strong>（若林区） — 果物の収穫体験・農業体験ができる公園型施設。季節ごとのイベントあり。</li>
+        </ul>
+        <p style="margin-top:8px;">※ 掲載施設は順次追加予定です。</p>
       </div>
 
       <!-- 検索・絞り込みエリア -->
@@ -583,6 +601,106 @@ def build_privacy():
     _write(html, "privacy.html")
 
 
+def build_about():
+    """about.html を生成する"""
+    print("  about.html ...")
+
+    updated = date.today().strftime("%Y年%m月%d日")
+
+    html = f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>このサイトについて｜仙台・宮城の子どもイベント</title>
+  <meta name="description" content="「仙台・宮城の子どもイベント」は、仙台市・宮城県の親子・小学生向けイベント情報を毎日自動更新で掲載するサイトです。無料体験・工作・科学・自然体験など幅広いジャンルのイベントを紹介しています。">
+  <meta property="og:title" content="このサイトについて｜仙台・宮城の子どもイベント">
+  <meta property="og:description" content="仙台市・宮城県の親子・小学生向けイベント情報を毎日自動更新で掲載。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{SITE_URL}/about.html">
+  <meta property="og:site_name" content="{SITE_NAME}">
+  <meta property="og:image" content="{SITE_URL}/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{SITE_URL}/ogp.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="canonical" href="{SITE_URL}/about.html">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1651709617297400" crossorigin="anonymous"></script>
+</head>
+<body>
+{render_header("about")}
+
+  <main>
+    <div class="container">
+      <div class="privacy-wrap">
+        <div class="privacy-card">
+          <h1>このサイトについて</h1>
+          <p class="updated">最終更新日：{updated}</p>
+
+          <h2>サイトの目的</h2>
+          <p>「仙台・宮城の子どもイベント」は、仙台市・宮城県内で開催される<strong>子ども・親子向けのイベント情報</strong>をまとめて確認できるサイトです。</p>
+          <p>「今週末、子どもと一緒にどこかに行きたいけれど、どんなイベントがあるか分からない」という保護者の方に向けて、複数の施設・会場のイベント情報を一か所で確認できるよう作りました。</p>
+          <p>科学体験・工作教室・自然観察・スポーツ体験・縄文文化体験など、幅広いジャンルのイベントを掲載しています。<strong>無料で参加できるイベント</strong>も多数紹介しています。</p>
+
+          <h2>掲載エリア</h2>
+          <p>仙台市内（青葉区・太白区・若林区など）および宮城県内の施設・会場を中心に掲載しています。対象施設は順次拡大予定です。</p>
+
+          <h2>掲載中の施設・会場</h2>
+          <ul>
+            <li>
+              <strong>仙台市科学館</strong>（青葉区）<br>
+              科学実験・ものづくりワークショップ・天文観察など、子どもが科学に親しめるイベントを定期的に開催しています。小学生から楽しめるプログラムが充実しており、夏休み・冬休みなどの長期休暇中はとくに多くのイベントが企画されます。
+            </li>
+            <li>
+              <strong>イオンモール仙台上杉</strong>（青葉区）<br>
+              仙台市青葉区にある大型ショッピングモールで、週末を中心にキッズ向けワークショップや体験イベントが開催されます。雨の日でも屋内で楽しめるため、天候を問わず参加できるのが魅力です。
+            </li>
+            <li>
+              <strong>宮城県こもれびの森 森林科学館</strong>（川崎町）<br>
+              宮城県の豊かな森林の中にある体験施設です。竹を使った工作・苔玉作り・木工体験など、自然素材を活かした季節のイベントが人気です。仙台市内から車で約40分ほどの距離にあります。
+            </li>
+            <li>
+              <strong>仙台市縄文の森広場</strong>（太白区）<br>
+              縄文時代の竪穴住居が復元された歴史体験施設です。土器づくり・火おこし体験・勾玉づくりなど、教科書では学べないリアルな縄文文化を体験できます。子どもの歴史への興味を育てるきっかけになります。
+            </li>
+            <li>
+              <strong>JRフルーツパーク仙台あらはま</strong>（若林区）<br>
+              仙台市若林区にある農業体験型公園です。いちご・ぶどう・りんごなど季節の果物の収穫体験ができるほか、野菜の収穫・農業体験イベントも開催されます。食農教育の場として家族連れに人気です。
+            </li>
+          </ul>
+
+          <h2>更新頻度</h2>
+          <p>掲載情報は<strong>毎朝6時に自動更新</strong>されます。各施設の公式サイトから最新のイベント情報を収集し、過去のイベントは自動的に削除されます。常に「これから参加できるイベント」のみが表示される仕組みです。</p>
+
+          <h2>サイトの使い方</h2>
+          <ol>
+            <li><strong>「今週末」ボタン</strong>で今週の土日に開催されるイベントだけを絞り込めます。</li>
+            <li><strong>「無料イベント」ボタン</strong>で参加費無料のイベントだけを表示できます。</li>
+            <li><strong>キーワード検索</strong>でイベント名・会場名から探すことができます。</li>
+            <li>各イベントカードの「詳細・申し込み」ボタンから公式サイトで詳細を確認できます。</li>
+          </ol>
+
+          <h2>注意事項</h2>
+          <ul>
+            <li>掲載情報は各施設の公式サイトをもとに収集していますが、内容・日程・料金は変更または中止になる場合があります。参加前に必ず各公式サイトをご確認ください。</li>
+            <li>申し込みが必要なイベントがあります。定員に達している場合がありますのでご注意ください。</li>
+            <li>掲載漏れや情報の誤りがある場合はご容赦ください。</li>
+          </ul>
+
+          <h2>運営について</h2>
+          <p>本サイトは仙台・宮城在住の個人が運営しています。子どもと一緒に地域のイベントをもっと活用してほしいという思いで作りました。掲載施設の拡充やサイトの改善を随時進めています。</p>
+          <p>ご意見・ご要望は <a href="https://github.com/ndagsudo/sendai-kids-events/issues" target="_blank" rel="noopener">GitHubのIssueページ</a> よりお寄せください。</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+{render_footer()}
+</body>
+</html>"""
+
+    _write(html, "about.html")
+
+
 def build_sitemap():
     """sitemap.xml を生成する"""
     print("  sitemap.xml ...")
@@ -601,6 +719,12 @@ def build_sitemap():
     <lastmod>{today}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>{SITE_URL}/about.html</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>{SITE_URL}/privacy.html</loc>
@@ -679,11 +803,14 @@ def main():
     print("\n[4/6] privacy.html")
     build_privacy()
 
-    print("\n[5/6] sitemap.xml / robots.txt")
+    print("\n[5/6] about.html")
+    build_about()
+
+    print("\n[7/7] sitemap.xml / robots.txt")
     build_sitemap()
     build_robots()
 
-    print("\n[6/6] 静的ファイルのコピー")
+    print("\n[7/7] 静的ファイルのコピー")
     copy_static()
 
     print("\n" + "=" * 52)
