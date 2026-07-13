@@ -35,7 +35,7 @@
       <div class="hero">
         <h1>仙台・宮城の子どもイベント</h1>
         <p>仙台市・宮城県周辺の親子・小学生向けイベントを掲載しています。<br>
-           今週末（7月11日(土)・7月12日(日)）のおでかけにぜひ活用してください。</p>
+           今週末（7月18日(土)・7月19日(日)）のおでかけにぜひ活用してください。</p>
         <p>科学体験・工作・自然観察・スポーツ・ワークショップなど、<br>
            子どもが楽しめるイベントを毎朝自動更新でお届けします。<br>
            無料イベントも多数掲載中！お気に入りを見つけてください。</p>
@@ -63,7 +63,7 @@
         </div>
         <div class="filter-buttons">
           <button class="filter-btn active" data-filter="all">すべて</button>
-          <button class="filter-btn" data-filter="weekend">🗓 今週末（7月11日(土)・7月12日(日)）</button>
+          <button class="filter-btn" data-filter="weekend">🗓 今週末（7月18日(土)・7月19日(日)）</button>
           <button class="filter-btn" data-filter="free">🎁 無料イベント</button>
         </div>
       </div>
@@ -124,30 +124,13 @@
       <span class="btn-domain">www.kanezaki.co.jp</span>
     </article>
     <article class="event-card"
-               data-start="2026-07-12"
-               data-end="2026-07-12"
-               data-free="false"
-               data-search="縄文体験「土笛」 7月12日（日）13時開始。材料費：200円。予約推奨（電話 022-307-5665）。 仙台市縄文の森広場（宮城野区）">
-      <div class="card-top">
-        <span class="event-date">📅 7月12日(日)</span>
-        <div class="badge-group"><span class="badge badge-weekend">今週末</span></div>
-      </div>
-      <h2 class="event-title">縄文体験「土笛」</h2>
-      <p class="event-venue">📍 仙台市縄文の森広場（宮城野区）</p>
-      <p class="event-summary">7月12日（日）13時開始。材料費：200円。予約推奨（電話 022-307-5665）。</p>
-      <a href="https://www.sendai-jomon.jp/" target="_blank" rel="noopener noreferrer" class="btn-detail">
-        公式サイトで確認 →
-      </a>
-      <span class="btn-domain">www.sendai-jomon.jp</span>
-    </article>
-    <article class="event-card"
                data-start="2026-07-18"
                data-end="2026-07-19"
                data-free="true"
                data-search="トミカ・プラレールわくわくパーク 開催：2026/07/18(土) 〜 2026/07/19(日)。場所：4階 kamisugi one park屋内。トミカ・プラレールわくわくパーク開催！ 「トミカハンティング！」や「プラレールあみだくじ」に...。 イオンモール仙台上杉（青葉区）">
       <div class="card-top">
         <span class="event-date">📅 7月18日(土)〜7月19日(日)</span>
-        <div class="badge-group"><span class="badge badge-free">無料</span></div>
+        <div class="badge-group"><span class="badge badge-weekend">今週末</span><span class="badge badge-free">無料</span></div>
       </div>
       <h2 class="event-title">トミカ・プラレールわくわくパーク</h2>
       <p class="event-venue">📍 イオンモール仙台上杉（青葉区）</p>
@@ -164,11 +147,28 @@
                data-search="縄文体験「縄文土器」 7月18日（土）13時開始。材料費：400円（土器(小)）。予約推奨（電話 022-307-5665）。 仙台市縄文の森広場（宮城野区）">
       <div class="card-top">
         <span class="event-date">📅 7月18日(土)</span>
-        
+        <div class="badge-group"><span class="badge badge-weekend">今週末</span></div>
       </div>
       <h2 class="event-title">縄文体験「縄文土器」</h2>
       <p class="event-venue">📍 仙台市縄文の森広場（宮城野区）</p>
       <p class="event-summary">7月18日（土）13時開始。材料費：400円（土器(小)）。予約推奨（電話 022-307-5665）。</p>
+      <a href="https://www.sendai-jomon.jp/" target="_blank" rel="noopener noreferrer" class="btn-detail">
+        公式サイトで確認 →
+      </a>
+      <span class="btn-domain">www.sendai-jomon.jp</span>
+    </article>
+    <article class="event-card"
+               data-start="2026-07-19"
+               data-end="2026-07-19"
+               data-free="false"
+               data-search="縄文体験「土笛」 7月19日（日）13時開始。材料費：200円。予約推奨（電話 022-307-5665）。 仙台市縄文の森広場（宮城野区）">
+      <div class="card-top">
+        <span class="event-date">📅 7月19日(日)</span>
+        <div class="badge-group"><span class="badge badge-weekend">今週末</span></div>
+      </div>
+      <h2 class="event-title">縄文体験「土笛」</h2>
+      <p class="event-venue">📍 仙台市縄文の森広場（宮城野区）</p>
+      <p class="event-summary">7月19日（日）13時開始。材料費：200円。予約推奨（電話 022-307-5665）。</p>
       <a href="https://www.sendai-jomon.jp/" target="_blank" rel="noopener noreferrer" class="btn-detail">
         公式サイトで確認 →
       </a>
@@ -365,8 +365,8 @@
   </footer>
   <script>
     // 今週末の範囲（build.py 実行時の日付で固定）
-    var WKND_START = new Date("2026-07-11");
-    var WKND_END   = new Date("2026-07-12");
+    var WKND_START = new Date("2026-07-18");
+    var WKND_END   = new Date("2026-07-19");
     WKND_END.setHours(23, 59, 59);
 
     var currentFilter = "all";
