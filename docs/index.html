@@ -35,7 +35,7 @@
       <div class="hero">
         <h1>仙台・宮城の子どもイベント</h1>
         <p>仙台市・宮城県周辺の親子・小学生向けイベントを掲載しています。<br>
-           今週末（9月26日(土)・9月27日(日)）のおでかけにぜひ活用してください。</p>
+           今週末（10月3日(土)・10月4日(日)）のおでかけにぜひ活用してください。</p>
         <p>科学体験・工作・自然観察・スポーツ・ワークショップなど、<br>
            子どもが楽しめるイベントを毎朝自動更新でお届けします。<br>
            無料イベントも多数掲載中！お気に入りを見つけてください。</p>
@@ -63,7 +63,7 @@
         </div>
         <div class="filter-buttons">
           <button class="filter-btn active" data-filter="all">すべて</button>
-          <button class="filter-btn" data-filter="weekend">🗓 今週末（9月26日(土)・9月27日(日)）</button>
+          <button class="filter-btn" data-filter="weekend">🗓 今週末（10月3日(土)・10月4日(日)）</button>
           <button class="filter-btn" data-filter="free">🎁 無料イベント</button>
         </div>
       </div>
@@ -96,7 +96,7 @@
                data-search="トミカ・プラレールのイベント「ニコニコ！のりものランド」開催！ 開催：2026/10/02(金) 〜 2026/10/12(月)。場所：4階 イオンホール。トミカとプラレールの世界にようこそ！ のりもの大好きなお友だちがニコニコ笑顔になっちゃうイベ...。 イオンモール仙台上杉（青葉区）">
       <div class="card-top">
         <span class="event-date">📅 10月2日(金)〜10月12日(月)</span>
-        <div class="badge-group"><span class="badge badge-free">無料</span></div>
+        <div class="badge-group"><span class="badge badge-weekend">今週末</span><span class="badge badge-free">無料</span></div>
       </div>
       <h2 class="event-title">トミカ・プラレールのイベント「ニコニコ！のりものランド」開催！</h2>
       <p class="event-venue">📍 イオンモール仙台上杉（青葉区）</p>
@@ -113,7 +113,7 @@
                data-search="第56回きのこ展 場所：3階。 仙台市科学館（泉区）">
       <div class="card-top">
         <span class="event-date">📅 10月3日(土)〜10月4日(日)</span>
-        <div class="badge-group"><span class="badge badge-free">無料</span></div>
+        <div class="badge-group"><span class="badge badge-weekend">今週末</span><span class="badge badge-free">無料</span></div>
       </div>
       <h2 class="event-title">第56回きのこ展</h2>
       <p class="event-venue">📍 仙台市科学館（泉区）</p>
@@ -130,7 +130,7 @@
                data-search="第7回親子3dプリンター体験科学教室(先着順 対象：小学生。参加費：無料。場所：2階。 仙台市科学館（泉区）">
       <div class="card-top">
         <span class="event-date">📅 10月3日(土)</span>
-        <div class="badge-group"><span class="badge badge-free">無料</span></div>
+        <div class="badge-group"><span class="badge badge-weekend">今週末</span><span class="badge badge-free">無料</span></div>
       </div>
       <h2 class="event-title">第7回親子3Dプリンター体験科学教室(先着順</h2>
       <p class="event-venue">📍 仙台市科学館（泉区）</p>
@@ -147,7 +147,7 @@
                data-search="縄文体験「土笛」 10月3日（土）13時開始。材料費：200円。予約推奨（電話 022-307-5665）。 仙台市縄文の森広場（宮城野区）">
       <div class="card-top">
         <span class="event-date">📅 10月3日(土)</span>
-        
+        <div class="badge-group"><span class="badge badge-weekend">今週末</span></div>
       </div>
       <h2 class="event-title">縄文体験「土笛」</h2>
       <p class="event-venue">📍 仙台市縄文の森広場（宮城野区）</p>
@@ -164,7 +164,7 @@
                data-search="名探偵プリキュア！がやってくる！ 開催：2026/10/04(日)。場所：2階 ずんだコート。【定員】 各回先着70組さま（1組5名さままで参加可能） ※キャラクターショーではあり...。 イオンモール仙台上杉（青葉区）">
       <div class="card-top">
         <span class="event-date">📅 10月4日(日)</span>
-        <div class="badge-group"><span class="badge badge-free">無料</span></div>
+        <div class="badge-group"><span class="badge badge-weekend">今週末</span><span class="badge badge-free">無料</span></div>
       </div>
       <h2 class="event-title">名探偵プリキュア！がやってくる！</h2>
       <p class="event-venue">📍 イオンモール仙台上杉（青葉区）</p>
@@ -314,8 +314,8 @@
   </footer>
   <script>
     // 今週末の範囲（build.py 実行時の日付で固定）
-    var WKND_START = new Date("2026-09-26");
-    var WKND_END   = new Date("2026-09-27");
+    var WKND_START = new Date("2026-10-03");
+    var WKND_END   = new Date("2026-10-04");
     WKND_END.setHours(23, 59, 59);
 
     var currentFilter = "all";
