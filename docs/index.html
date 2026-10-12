@@ -35,7 +35,7 @@
       <div class="hero">
         <h1>仙台・宮城の子どもイベント</h1>
         <p>仙台市・宮城県周辺の親子・小学生向けイベントを掲載しています。<br>
-           今週末（10月10日(土)・10月11日(日)）のおでかけにぜひ活用してください。</p>
+           今週末（10月17日(土)・10月18日(日)）のおでかけにぜひ活用してください。</p>
         <p>科学体験・工作・自然観察・スポーツ・ワークショップなど、<br>
            子どもが楽しめるイベントを毎朝自動更新でお届けします。<br>
            無料イベントも多数掲載中！お気に入りを見つけてください。</p>
@@ -63,7 +63,7 @@
         </div>
         <div class="filter-buttons">
           <button class="filter-btn active" data-filter="all">すべて</button>
-          <button class="filter-btn" data-filter="weekend">🗓 今週末（10月10日(土)・10月11日(日)）</button>
+          <button class="filter-btn" data-filter="weekend">🗓 今週末（10月17日(土)・10月18日(日)）</button>
           <button class="filter-btn" data-filter="free">🎁 無料イベント</button>
         </div>
       </div>
@@ -96,7 +96,7 @@
                data-search="トミカ・プラレールのイベント「ニコニコ！のりものランド」開催！ 開催：2026/10/02(金) 〜 2026/10/12(月)。場所：4階 イオンホール。トミカとプラレールの世界にようこそ！ のりもの大好きなお友だちがニコニコ笑顔になっちゃうイベ...。 イオンモール仙台上杉（青葉区）">
       <div class="card-top">
         <span class="event-date">📅 10月2日(金)〜10月12日(月)</span>
-        <div class="badge-group"><span class="badge badge-weekend">今週末</span><span class="badge badge-free">無料</span></div>
+        <div class="badge-group"><span class="badge badge-free">無料</span></div>
       </div>
       <h2 class="event-title">トミカ・プラレールのイベント「ニコニコ！のりものランド」開催！</h2>
       <p class="event-venue">📍 イオンモール仙台上杉（青葉区）</p>
@@ -215,7 +215,7 @@
                data-search="楽しい化学実験室「水の「硬度」をはかる」 対象：小学3年生以上（小学3・4年生は保護者同伴）。参加費：無　料。場所：2階。 仙台市科学館（泉区）">
       <div class="card-top">
         <span class="event-date">📅 10月17日(土)</span>
-        
+        <div class="badge-group"><span class="badge badge-weekend">今週末</span></div>
       </div>
       <h2 class="event-title">楽しい化学実験室「水の「硬度」をはかる」</h2>
       <p class="event-venue">📍 仙台市科学館（泉区）</p>
@@ -232,7 +232,7 @@
                data-search="ダッジオーブンで 燻製・ 石焼き芋 作り体験 10月18日（日）開催。参加費：800円。要申込（電話またはホームページ）。 宮城県こもれびの森 森林科学館（川崎町）">
       <div class="card-top">
         <span class="event-date">📅 10月18日(日)</span>
-        
+        <div class="badge-group"><span class="badge badge-weekend">今週末</span></div>
       </div>
       <h2 class="event-title">ダッジオーブンで 燻製・ 石焼き芋 作り体験</h2>
       <p class="event-venue">📍 宮城県こもれびの森 森林科学館（川崎町）</p>
@@ -382,8 +382,8 @@
   </footer>
   <script>
     // 今週末の範囲（build.py 実行時の日付で固定）
-    var WKND_START = new Date("2026-10-10");
-    var WKND_END   = new Date("2026-10-11");
+    var WKND_START = new Date("2026-10-17");
+    var WKND_END   = new Date("2026-10-18");
     WKND_END.setHours(23, 59, 59);
 
     var currentFilter = "all";
