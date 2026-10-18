@@ -368,7 +368,10 @@ def build_index(events, sat, sun):
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#e8622c">
   <title>仙台・宮城の子どもイベント｜今週末に行けるイベントを探そう</title>
   <meta name="description" content="仙台市・宮城県の子ども・親子向けイベント情報。今週末のおでかけに役立つ無料イベント・体験教室・工作・科学・自然体験など小学生向けイベントを掲載。">
   <meta property="og:title" content="仙台・宮城の子どもイベント">
@@ -380,6 +383,9 @@ def build_index(events, sat, sun):
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="{SITE_URL}/ogp.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="icon" href="icon-192.png">
   <link rel="canonical" href="{SITE_URL}/index.html">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1651709617297400" crossorigin="anonymous"></script>
 </head>
@@ -468,7 +474,10 @@ def build_weekend(events, sat, sun):
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#e8622c">
   <title>今週末のイベント（{weekend_label}）｜仙台・宮城の子どもイベント</title>
   <meta name="description" content="{weekend_label}に仙台・宮城で開催される子ども・親子向けイベント一覧。小学生と行けるおすすめのおでかけスポットをご紹介。">
   <meta property="og:title" content="今週末のイベント｜仙台・宮城の子どもイベント">
@@ -480,6 +489,9 @@ def build_weekend(events, sat, sun):
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="{SITE_URL}/ogp.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="icon" href="icon-192.png">
   <link rel="canonical" href="{SITE_URL}/weekend.html">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1651709617297400" crossorigin="anonymous"></script>
 </head>
@@ -526,10 +538,16 @@ def build_privacy():
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#e8622c">
   <title>プライバシーポリシー｜仙台・宮城の子どもイベント</title>
   <meta name="description" content="仙台・宮城の子どもイベントサイトのプライバシーポリシー。個人情報・Cookie・Google アナリティクス・AdSense についての説明をご確認ください。">
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="icon" href="icon-192.png">
   <link rel="canonical" href="{SITE_URL}/privacy.html">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1651709617297400" crossorigin="anonymous"></script>
 </head>
@@ -611,7 +629,10 @@ def build_about():
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#e8622c">
   <title>このサイトについて｜仙台・宮城の子どもイベント</title>
   <meta name="description" content="「仙台・宮城の子どもイベント」は、仙台市・宮城県の親子・小学生向けイベント情報を毎日自動更新で掲載するサイトです。無料体験・工作・科学・自然体験など幅広いジャンルのイベントを紹介しています。">
   <meta property="og:title" content="このサイトについて｜仙台・宮城の子どもイベント">
@@ -623,6 +644,9 @@ def build_about():
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="{SITE_URL}/ogp.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="icon" href="icon-192.png">
   <link rel="canonical" href="{SITE_URL}/about.html">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1651709617297400" crossorigin="anonymous"></script>
 </head>

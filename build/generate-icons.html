@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>アイコン生成ツール</title>
+  <style>
+    body { font-family: sans-serif; padding: 30px; background: #fff7ed; color: #4a2c0a; }
+    h1 { color: #e8622c; margin-bottom: 20px; }
+    canvas { display: none; }
+    .btn { display:inline-block; padding:12px 24px; background:#e8622c; color:#fff; border:none; border-radius:8px; cursor:pointer; font-size:15px; margin:8px 0; }
+    p { margin:10px 0; color:#6b4a2a; line-height:1.6; }
+    .note { background:#ffe8d6; border-left:4px solid #e8622c; padding:12px 16px; border-radius:0 8px 8px 0; margin-top:20px; }
+    code { color:#e8622c; }
+  </style>
+</head>
+<body>
+  <h1>🎪 アイコン生成ツール（仙台・宮城の子どもイベント）</h1>
+  <p>このページをブラウザで開き、下のボタンでアイコンPNGを生成・ダウンロードしてください。<br>
+     ダウンロードしたファイルを <code>static/</code> フォルダ直下に配置してください
+     （<code>copy_static()</code> はサブフォルダをコピーしないため、直下に置く必要があります）。</p>
+
+  <canvas id="c192" width="192" height="192"></canvas>
+  <canvas id="c512" width="512" height="512"></canvas>
+
+  <br>
+  <button class="btn" onclick="generate(192)">icon-192.png をダウンロード</button><br>
+  <button class="btn" onclick="generate(512)">icon-512.png をダウンロード</button>
+
+  <div class="note">
+    <strong>配置先：</strong><code>static/icon-192.png</code> と <code>icon-512.png</code><br>
+    ビルド時に static/ から docs/ へそのままコピーされます。
+  </div>
+
+  <script>
+    function generate(size) {
+      const canvas = document.getElementById('c' + size);
+      const ctx = canvas.getContext('2d');
+      const s = size;
+      const unit = s / 192;
+
+      const grad = ctx.createLinearGradient(0, 0, s, s);
+      grad.addColorStop(0, '#ff8a5c');
+      grad.addColorStop(1, '#ffc93c');
+      ctx.fillStyle = grad;
+      roundRect(ctx, 0, 0, s, s, s * 0.22);
+      ctx.fill();
+
+      // サーカステント風の三角屋根
+      ctx.fillStyle = 'rgba(255,255,255,0.92)';
+      const tentCx = s * 0.5, tentTopY = s * 0.18, tentBaseY = s * 0.52;
+      const tentHalfW = s * 0.26;
+      ctx.beginPath();
+      ctx.moveTo(tentCx, tentTopY);
+      ctx.lineTo(tentCx - tentHalfW, tentBaseY);
+      ctx.lineTo(tentCx + tentHalfW, tentBaseY);
+      ctx.closePath();
+      ctx.fill();
+
+      // テントの縞模様
+      ctx.strokeStyle = '#e8622c';
+      ctx.lineWidth = 5 * unit;
+      for (let i = -2; i <= 2; i++) {
+        ctx.beginPath();
+        ctx.moveTo(tentCx, tentTopY);
+        ctx.lineTo(tentCx + tentHalfW * (i / 2.4), tentBaseY);
+        ctx.stroke();
+      }
+
+      // 旗
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.moveTo(tentCx, tentTopY);
+      ctx.lineTo(tentCx + s * 0.09, tentTopY + s * 0.035);
+      ctx.lineTo(tentCx, tentTopY + s * 0.07);
+      ctx.closePath();
+      ctx.fill();
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 3 * unit;
+      ctx.beginPath();
+      ctx.moveTo(tentCx, tentTopY);
+      ctx.lineTo(tentCx, tentTopY - s * 0.07);
+      ctx.stroke();
+
+      ctx.fillStyle = '#fff';
+      ctx.font = `bold ${Math.round(19 * unit)}px -apple-system,sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.fillText('イベント', s * 0.5, s * 0.82);
+
+      const link = document.createElement('a');
+      link.download = 'icon-' + size + '.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+
+    function roundRect(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      ctx.lineTo(x + r, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+      ctx.closePath();
+    }
+  </script>
+</body>
+</html>
