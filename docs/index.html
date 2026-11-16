@@ -41,7 +41,7 @@
       <div class="hero">
         <h1>仙台・宮城の子どもイベント</h1>
         <p>仙台市・宮城県周辺の親子・小学生向けイベントを掲載しています。<br>
-           今週末（11月14日(土)・11月15日(日)）のおでかけにぜひ活用してください。</p>
+           今週末（11月21日(土)・11月22日(日)）のおでかけにぜひ活用してください。</p>
         <p>科学体験・工作・自然観察・スポーツ・ワークショップなど、<br>
            子どもが楽しめるイベントを毎朝自動更新でお届けします。<br>
            無料イベントも多数掲載中！お気に入りを見つけてください。</p>
@@ -69,7 +69,7 @@
         </div>
         <div class="filter-buttons">
           <button class="filter-btn active" data-filter="all">すべて</button>
-          <button class="filter-btn" data-filter="weekend">🗓 今週末（11月14日(土)・11月15日(日)）</button>
+          <button class="filter-btn" data-filter="weekend">🗓 今週末（11月21日(土)・11月22日(日)）</button>
           <button class="filter-btn" data-filter="free">🎁 無料イベント</button>
         </div>
       </div>
@@ -102,7 +102,7 @@
                data-search="キッズエンジニア in 東北 2026 仙台（事前申込必要イベントあり・受付は終了しました） 対象：小学生 （小学4年生以下は保護者同伴） ※プログラムにより対象学年・定員が異なります。 ※プログラムa・dは未就学児の応募・体験も可能です（保護者同伴）。参加費：無料 (※科学館展示室を観覧される場合は別途入館料が必要)。場所：1階。 仙台市科学館（泉区）">
       <div class="card-top">
         <span class="event-date">📅 11月21日(土)</span>
-        <div class="badge-group"><span class="badge badge-free">無料</span></div>
+        <div class="badge-group"><span class="badge badge-weekend">今週末</span><span class="badge badge-free">無料</span></div>
       </div>
       <h2 class="event-title">キッズエンジニア in 東北 2026 仙台（事前申込必要イベントあり・受付は終了しました）</h2>
       <p class="event-venue">📍 仙台市科学館（泉区）</p>
@@ -119,7 +119,7 @@
                data-search="縄文体験「縄文土器」 11月21日（土）13時開始。材料費：400円（土器(小)）。予約推奨（電話 022-307-5665）。 仙台市縄文の森広場（宮城野区）">
       <div class="card-top">
         <span class="event-date">📅 11月21日(土)</span>
-        
+        <div class="badge-group"><span class="badge badge-weekend">今週末</span></div>
       </div>
       <h2 class="event-title">縄文体験「縄文土器」</h2>
       <p class="event-venue">📍 仙台市縄文の森広場（宮城野区）</p>
@@ -136,7 +136,7 @@
                data-search="企画展「杜の都のけものたち」関連イベント：クマ対策市民講座「生態を正しく学び被害を未然に防ごう」 対象：小学生以上（小学4年生以下は保護者同伴）。参加費：常設展の入館料が必要。場所：3階常設展示室。 仙台市科学館（泉区）">
       <div class="card-top">
         <span class="event-date">📅 11月22日(日)</span>
-        <div class="badge-group"><span class="badge badge-free">無料</span></div>
+        <div class="badge-group"><span class="badge badge-weekend">今週末</span><span class="badge badge-free">無料</span></div>
       </div>
       <h2 class="event-title">企画展「杜の都のけものたち」関連イベント：クマ対策市民講座「生態を正しく学び被害を未然に防ごう」</h2>
       <p class="event-venue">📍 仙台市科学館（泉区）</p>
@@ -153,7 +153,7 @@
                data-search="サイエンスショー 対象：どなたでも。参加費：常設展の入館料が必要。場所：3階。申込：不要（定員を設ける場合があります）。 仙台市科学館（泉区）">
       <div class="card-top">
         <span class="event-date">📅 11月22日(日)〜12月24日(木)</span>
-        <div class="badge-group"><span class="badge badge-free">無料</span></div>
+        <div class="badge-group"><span class="badge badge-weekend">今週末</span><span class="badge badge-free">無料</span></div>
       </div>
       <h2 class="event-title">サイエンスショー</h2>
       <p class="event-venue">📍 仙台市科学館（泉区）</p>
@@ -170,7 +170,7 @@
                data-search="縄文体験「土笛」 11月22日（日）13時開始。材料費：200円。予約推奨（電話 022-307-5665）。 仙台市縄文の森広場（宮城野区）">
       <div class="card-top">
         <span class="event-date">📅 11月22日(日)</span>
-        
+        <div class="badge-group"><span class="badge badge-weekend">今週末</span></div>
       </div>
       <h2 class="event-title">縄文体験「土笛」</h2>
       <p class="event-venue">📍 仙台市縄文の森広場（宮城野区）</p>
@@ -354,8 +354,8 @@
   </footer>
   <script>
     // 今週末の範囲（build.py 実行時の日付で固定）
-    var WKND_START = new Date("2026-11-14");
-    var WKND_END   = new Date("2026-11-15");
+    var WKND_START = new Date("2026-11-21");
+    var WKND_END   = new Date("2026-11-22");
     WKND_END.setHours(23, 59, 59);
 
     var currentFilter = "all";
